@@ -5,6 +5,10 @@ exports.init = function(app, db) {
         res.render('index');
     });
     
+    app.get('/map', function(req, res){
+        res.render('map');
+    });
+    
     app.get('/user', function(req, res){
         var collection = db.get('usercollection');
         collection.find({},{},function(e,docs){ //取得所有的集合数据, 渲染到页面上,关键字是userlist
